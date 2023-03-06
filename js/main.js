@@ -27,20 +27,25 @@ function mostraNumeri(listaNumeri) {
 // }
 
 
-// function inserimentoNumeri(listaNumeri){
-//     const numeriIndivinati = [];
-//     let i = 0;
-//     while(i < 5){
-//         const numeroUtente = Number(prompt(`Inserisci il numero ${i+1}: `));
-//         if(!isNaN(numeroUtente)){
-//             if(listaNumeri.includes(numeroUtente)){
-//                 numeriIndivinati.push(numeroUtente);
-//             }
-//             i++;
-//         }
-//     }
-//     return numeriIndivinati;
-// }
+function inserimentoNumeri(listaNumeri){
+    const numeriIndivinati = [];
+    let i = 0;
+    while(i < 5){
+        const numeroUtente = Number(prompt(`Inserisci il numero ${i+1}: `));
+        if(!isNaN(numeroUtente)){
+            if(listaNumeri.includes(numeroUtente)){
+                numeriIndivinati.push(numeroUtente);
+            }
+            i++;
+        }
+    }
+    return numeriIndivinati;
+}
+
+function nascondiNumeri(){
+    const containerNumeri = document.querySelector('.container');
+    containerNumeri.innerHTML = '';
+}
 
 // Main
 const numeroMax = 100;
@@ -52,3 +57,11 @@ mostraNumeri(listaNumeri);
 // setTimeout(function(){
 //     nascondiNumeri(listaNumeri);
 // }, 30000);
+
+setTimeout(nascondiNumeri,30000);
+
+setTimeout(function(){
+    const numeriIndovinati = inserimentoNumeri(listaNumeri);
+    console.log(`Numeri Indovinati: ${numeriIndovinati.length}`);
+    mostraNumeri(numeriIndovinati);
+}, 31000);
