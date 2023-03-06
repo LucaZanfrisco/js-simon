@@ -25,14 +25,6 @@ function mostraNumeri(listaNumeri) {
   }
 }
 
-// function nascondiNumeri(listaNumeri){
-//     const containerCelle = document.querySelector('.container');
-//     containerCelle.innerHTML = '';
-
-//     const numeriIndovinati = inserimentoNumeri(listaNumeri);
-//     containerCelle.innerText = numeriIndovinati;
-// }
-
 // Funzione che permette all'utente di inserire 5 numeri se il numeri sono presenti in quelli generati
 // li aggiunge ai numeri indovinati
 function inserimentoNumeri(listaNumeri) {
@@ -83,7 +75,8 @@ timer();
 // Funzione che nasconde i numeri dopo 30 secondi
 setTimeout(nascondiNumeri, 30000);
 
-// // Funzione che si attiva dopo la scomparsa dei numeri e che permette all'utente di inserire i numeri per indovinare
+// Funzione che si attiva dopo la scomparsa dei numeri e che permette all'utente di inserire i numeri per indovinare
+// e stampa del risultato a schermo in base alla quantita dei numeri che l'utente indovina
 setTimeout(function () {
   const numeriIndovinati = inserimentoNumeri(listaNumeri);
   if(numeriIndovinati.length !== 0){
